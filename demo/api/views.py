@@ -33,6 +33,7 @@ DEVS = [ANNA, LOUIS, MARCUS]
 
 def root(request):
     return HttpResponse(
+        "<h2>ScanAPI Demo API</h2>"
         "<a href=https://demo.scanapi.dev/api/health>https://demo.scanapi.dev/api/health</a> (GET)<br>"
         "<a href=https://demo.scanapi.dev/api/devs>https://demo.scanapi.dev/api/devs</a> (GET, POST)<br>"
         "<a href=https://demo.scanapi.dev/api/devs?newOpportunities=true>https://demo.scanapi.dev/api/devs?newOpportunities=true</a> (GET)<br>"

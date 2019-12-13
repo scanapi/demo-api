@@ -4,8 +4,9 @@ from django.urls import path, include
 
 def home(request):
     return HttpResponse(
-        "Welcome to ScanAPI Demo."
-        "\n\nAccess the demo api at: https://demo.scanapi.dev/api"
+        "<h2>ScanAPI Demo</h2>"
+        "<p>This is an application to help showing how ScanAPI works</p>"
+        "<p>Access the demo API at: <a href=https://demo.scanapi.dev/api>https://demo.scanapi.dev/api</a></p>"
     )
 
 
