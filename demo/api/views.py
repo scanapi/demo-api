@@ -40,6 +40,9 @@ def health(request):
 
 @csrf_exempt
 def dev_list(request):
+    if is_not_authenticated(request):
+        return not_authenticated()
+
     if request.method == "GET":
         newOpportunities = request.GET.get("newOpportunities")
         devs = filter_devs_by_new_opportunities(newOpportunities)
@@ -55,6 +58,9 @@ def dev_list(request):
 
 @csrf_exempt
 def dev_details(request, identifier):
+    if is_not_authenticated(request):
+        return not_authenticated()
+
     uuid = str(identifier)
     dev = get_dev(uuid)
     if request.method == "GET":
@@ -73,6 +79,9 @@ def dev_details(request, identifier):
 
 
 def dev_details_languages(request, identifier):
+    if is_not_authenticated(request):
+        return not_authenticated()
+
     uuid = str(identifier)
     dev = get_dev(uuid)
     if request.method == "GET":
@@ -85,7 +94,20 @@ def dev_details_languages(request, identifier):
 
 
 def language_list(request):
+    if is_not_authenticated(request):
+        return not_authenticated()
+
     return JsonResponse(["c", "go", "java", "python", "ruby"], safe=False)
+
+
+def is_not_authenticated(request):
+    api_key = request.headers.get("x-api-key")
+
+    return api_key != "demoKEY123"
+
+
+def not_authenticated():
+    return HttpResponse(f"Failed to authenticate", status=401)
 
 
 def filter_devs_by_new_opportunities(newOpportunities):
