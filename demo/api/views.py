@@ -85,7 +85,7 @@ def dev_details(request, identifier):
         if not dev:
             return dev_not_found(uuid)
 
-        return JsonResponse({"deleted": f"{uuid}"}, status=204, safe=False)
+        return JsonResponse({"deleted": f"{uuid}"}, status=200, safe=False)
 
     return http_method_now_allowed(request.method)
 
@@ -97,7 +97,7 @@ def dev_details_languages(request, identifier):
         if not dev:
             return dev_not_found(uuid)
 
-        return JsonResponse(dev["languages"], status=204, safe=False)
+        return JsonResponse(dev["languages"], status=200, safe=False)
 
     return http_method_now_allowed(request.method)
 
