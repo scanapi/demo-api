@@ -33,13 +33,13 @@ DEVS = [ANNA, LOUIS, MARCUS]
 
 def root(request):
     return HttpResponse(
-        "<a href=https://demo.scanapi.dev/api/health>https://demo.scanapi.dev/api/health</a><br>"
-        "<a href=https://demo.scanapi.dev/api/devs>https://demo.scanapi.dev/api/devs</a><br>"
-        "<a href=https://demo.scanapi.dev/api/devs?newOpportunities=true>https://demo.scanapi.dev/api/devs?newOpportunities=true</a><br>"
-        "<a href=https://demo.scanapi.dev/api/devs?newOpportunities=false>https://demo.scanapi.dev/api/devs?newOpportunities=false</a><br>"
-        "<a href=https://demo.scanapi.dev/api/languages>https://demo.scanapi.dev/api/languages</a><br>"
-        "<a href=https://demo.scanapi.dev/api/devs/129e8cb2-d19c-41ad-9921-cea329bed7f0>https://demo.scanapi.dev/api/devs/129e8cb2-d19c-41ad-9921-cea329bed7f0</a><br>"
-        "<a href=https://demo.scanapi.dev/api/devs/129e8cb2-d19c-41ad-9921-cea329bed7f0/languages>https://demo.scanapi.dev/api/devs/129e8cb2-d19c-41ad-9921-cea329bed7f0/languages</a><br>"
+        "<a href=https://demo.scanapi.dev/api/health>https://demo.scanapi.dev/api/health</a> (GET)<br>"
+        "<a href=https://demo.scanapi.dev/api/devs>https://demo.scanapi.dev/api/devs</a> (GET, POST)<br>"
+        "<a href=https://demo.scanapi.dev/api/devs?newOpportunities=true>https://demo.scanapi.dev/api/devs?newOpportunities=true</a> (GET)<br>"
+        "<a href=https://demo.scanapi.dev/api/devs?newOpportunities=false>https://demo.scanapi.dev/api/devs?newOpportunities=false</a> (GET)<br>"
+        "<a href=https://demo.scanapi.dev/api/languages>https://demo.scanapi.dev/api/languages</a> (GET)<br>"
+        "<a href=https://demo.scanapi.dev/api/devs/129e8cb2-d19c-41ad-9921-cea329bed7f0>https://demo.scanapi.dev/api/devs/129e8cb2-d19c-41ad-9921-cea329bed7f0</a> (GET, DELETE)<br>"
+        "<a href=https://demo.scanapi.dev/api/devs/129e8cb2-d19c-41ad-9921-cea329bed7f0/languages>https://demo.scanapi.dev/api/devs/129e8cb2-d19c-41ad-9921-cea329bed7f0/languages</a> (GET)<br>"
     )
 
 
