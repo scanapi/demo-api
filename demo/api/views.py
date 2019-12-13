@@ -31,6 +31,18 @@ MARCUS = {
 DEVS = [ANNA, LOUIS, MARCUS]
 
 
+def root(request):
+    return HttpResponse(
+        "<a href=https://demo.scanapi.dev/api/health>https://demo.scanapi.dev/api/health</a><br>"
+        "<a href=https://demo.scanapi.dev/api/devs>https://demo.scanapi.dev/api/devs</a><br>"
+        "<a href=https://demo.scanapi.dev/api/devs?newOpportunities=true>https://demo.scanapi.dev/api/devs?newOpportunities=true</a><br>"
+        "<a href=https://demo.scanapi.dev/api/devs?newOpportunities=false>https://demo.scanapi.dev/api/devs?newOpportunities=false</a><br>"
+        "<a href=https://demo.scanapi.dev/api/languages>https://demo.scanapi.dev/api/languages</a><br>"
+        "<a href=https://demo.scanapi.dev/api/devs/129e8cb2-d19c-41ad-9921-cea329bed7f0>https://demo.scanapi.dev/api/devs/129e8cb2-d19c-41ad-9921-cea329bed7f0</a><br>"
+        "<a href=https://demo.scanapi.dev/api/devs/129e8cb2-d19c-41ad-9921-cea329bed7f0/languages>https://demo.scanapi.dev/api/devs/129e8cb2-d19c-41ad-9921-cea329bed7f0/languages</a><br>"
+    )
+
+
 def health(request):
     if request.method == "GET":
         return HttpResponse("OK!")
@@ -40,9 +52,6 @@ def health(request):
 
 @csrf_exempt
 def dev_list(request):
-    if is_not_authenticated(request):
-        return not_authenticated()
-
     if request.method == "GET":
         newOpportunities = request.GET.get("newOpportunities")
         devs = filter_devs_by_new_opportunities(newOpportunities)
@@ -50,6 +59,9 @@ def dev_list(request):
         return JsonResponse(devs, safe=False)
 
     if request.method == "POST":
+        if is_not_authenticated(request):
+            return not_authenticated()
+
         body = json.loads(str(request.body, encoding="utf-8"))
         return JsonResponse(body, status=201, safe=False)
 
@@ -58,9 +70,6 @@ def dev_list(request):
 
 @csrf_exempt
 def dev_details(request, identifier):
-    if is_not_authenticated(request):
-        return not_authenticated()
-
     uuid = str(identifier)
     dev = get_dev(uuid)
     if request.method == "GET":
@@ -70,6 +79,9 @@ def dev_details(request, identifier):
         return JsonResponse(dev, status=200, safe=False)
 
     if request.method == "DELETE":
+        if is_not_authenticated(request):
+            return not_authenticated()
+
         if not dev:
             return dev_not_found(uuid)
 
@@ -79,9 +91,6 @@ def dev_details(request, identifier):
 
 
 def dev_details_languages(request, identifier):
-    if is_not_authenticated(request):
-        return not_authenticated()
-
     uuid = str(identifier)
     dev = get_dev(uuid)
     if request.method == "GET":
@@ -94,9 +103,6 @@ def dev_details_languages(request, identifier):
 
 
 def language_list(request):
-    if is_not_authenticated(request):
-        return not_authenticated()
-
     return JsonResponse(["c", "go", "java", "python", "ruby"], safe=False)
 
 
