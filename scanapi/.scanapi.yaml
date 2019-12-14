@@ -1,0 +1,5 @@
+allow_redirect: true
+report:
+  hide:
+    headers:
+      - x-api-key
