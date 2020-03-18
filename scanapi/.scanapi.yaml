@@ -1,5 +1,5 @@
 allow_redirect: true
 report:
-  hide:
+  hide-request:
     headers:
       - x-api-key
