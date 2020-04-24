@@ -1,0 +1,103 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.Content {
+    width: 70%;
+    margin: auto;
+}
+
+.Endpoint {
+    margin-top: 50px;
+}
+
+.GET {
+    color: #3eb63e;
+}
+
+.POST {
+    color: #f5a623;
+}
+
+.DELETE {
+    color: #ed4b48;
+}
+
+.PUT {
+    color: #4a90e2;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    font-size: 21px;
+}
+
+p {
+    font-size: 18px;
+}
+
+details {
+    margin-top: 20px;
+}
+
+details div {
+    background-color: #F0F0F0;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+summary {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+img {
+    width: 350px;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+table,
+td,
+th {
+    border: 1px solid #CCC;
+    text-align: left;
+    border-radius: 15px;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+    padding: 8px 10px;
+}
+
+td {
+    text-align: left;
+    padding: 8px 10px;
+    width: 40%;
+}
+
+header {
+    background-color: #F0F0F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    background-color: white;
+}
+
+.SmallIcon {
+    width: 50px;
+    margin-right: 10px;
+}
