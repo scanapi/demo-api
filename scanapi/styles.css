@@ -101,3 +101,23 @@ body {
     width: 50px;
     margin-right: 10px;
 }
+
+.card-header {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn.btn-link {
+    padding: 0;
+}
+
+.card {
+    border: none !important;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    margin-bottom: 0 !important;
+}
