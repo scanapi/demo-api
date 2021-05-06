@@ -4,6 +4,11 @@ from snippets import views
 
 # Create a router and register our viewsets with it.
 router = DefaultRouter()
+router.get_api_root_view().cls.__name__ = "Demo API"
+router.get_api_root_view().cls.__doc__ = (
+    "ScanAPI's API built for demo purposes. "
+    "API based on the Django REST Framework's tutorial."
+)
 router.register(r"snippets", views.SnippetViewSet)
 router.register(r"users", views.UserViewSet)
 
