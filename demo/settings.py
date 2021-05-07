@@ -26,7 +26,7 @@ SECRET_KEY = "l^qu9024l%8*h$(&4*e&s3q+vc%gb-^27c5$0qu&ypgsl=_7_u"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "demo.scanapi.dev"]
 
 
 # Application definition
