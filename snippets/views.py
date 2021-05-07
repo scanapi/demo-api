@@ -20,6 +20,15 @@ def api_root(request, format=None):
     )
 
 
+class HealthViewSet(viewsets.ViewSet):
+    """
+    A simple ViewSet for retrieving the API health status.
+    """
+
+    def list(self, request):
+        return Response("OK!")
+
+
 class SnippetViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list`, `create`, `retrieve`,
