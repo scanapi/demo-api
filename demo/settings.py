@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     # Local Apps
+    "api.apps.ApiConfig",
     "snippets.apps.SnippetsConfig",
 ]
 
