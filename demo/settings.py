@@ -36,16 +36,22 @@ INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
-    "django.contrib.sessions",
     "django.contrib.messages",
+    "django.contrib.sessions",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
     # Third-Party Apps
+    "allauth",
+    "allauth.account",
+    "rest_auth.registration",
     "rest_framework",
     "rest_framework.authtoken",
     # Local Apps
     "api.apps.ApiConfig",
     "snippets.apps.SnippetsConfig",
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
