@@ -1,10 +1,13 @@
 from django.contrib import admin
 from django.urls import include, path
-from rest_framework.authtoken.views import obtain_auth_token  # <-- Here
+from rest_framework.authtoken.views import obtain_auth_token
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    # DEPRECATED: the old demo api. We are leaving it here only to avoid breaking external code
+    # that depends on it.
+    path("api/", include("api.urls")),
     path("", include("snippets.urls")),
 ]
 
