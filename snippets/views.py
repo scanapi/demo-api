@@ -10,22 +10,12 @@ from snippets.permissions import IsOwnerOrReadOnly
 from snippets.serializers import SnippetSerializer, UserSerializer
 
 
-@api_view(["GET"])
-def api_root(request, format=None):
-    return Response(
-        {
-            "users": reverse("user-list", request=request, format=format),
-            "snippets": reverse("snippet-list", request=request, format=format),
-        }
-    )
-
-
 class HealthViewSet(viewsets.ViewSet):
     """
     A simple ViewSet for retrieving the API health status.
     """
 
-    def list(self, request):
+    def list(self, request, version):
         return Response("OK!")
 
 
@@ -42,7 +32,7 @@ class SnippetViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
 
     @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer])
-    def highlight(self, request, *args, **kwargs):
+    def highlight(self, request, version, *args, **kwargs):
         snippet = self.get_object()
         return Response(snippet.highlighted)
 
