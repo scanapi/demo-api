@@ -1,8 +1,6 @@
 name: Lint
 
 on: [push , pull_request] 
-  
-  
 
 jobs:
   run-linters:
@@ -21,8 +19,7 @@ jobs:
       - name: Install Python dependencies
         run: pip install black 
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v1
-        with:
-          black: true
+      - name: Black Code Formatter
+        uses: lgeiger/black-action@v1.0.1
+
           
