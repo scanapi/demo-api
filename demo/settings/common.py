@@ -31,6 +31,8 @@ INSTALLED_APPS = [
     # Third-Party Apps
     "allauth",
     "allauth.account",
+    "allauth.socialaccount",
+    "rest_auth",
     "rest_auth.registration",
     "rest_framework",
     "rest_framework.authtoken",
@@ -133,3 +135,9 @@ STATIC_URL = "/static/"
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+
+
+# allauth settings
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_AUTHENTICATION_METHOD = "username"
+ACCOUNT_EMAIL_REQUIRED = False
