@@ -1,4 +1,4 @@
-Django==3.2.16
+Django==3.2.18
 PyYAML==5.4.1
 Pygments==2.9.0
 django-allauth==0.44.0
