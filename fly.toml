@@ -1,4 +1,4 @@
-# fly.toml file generated for demo-api on 2023-02-18T14:19:27+01:00
+# fly.toml file generated for demo-api on 2023-02-21T07:42:54+01:00
 
 app = "demo-api"
 kill_signal = "SIGINT"
@@ -6,15 +6,11 @@ kill_timeout = 5
 processes = []
 
 [env]
-  PORT = "8000"
   ENVIRONMENT = "production"
+  PORT = "8000"
 
 [experimental]
   auto_rollback = true
-
-[[statics]]
-  guest_path = "/app/static"
-  url_prefix = "/static"
 
 [[services]]
   http_checks = []
