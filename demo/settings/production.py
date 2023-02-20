@@ -1,5 +1,5 @@
-import django_heroku
 from demo.settings.common import *
+import os
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -10,6 +10,4 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["demo.scanapi.dev"]
-
-django_heroku.settings(locals())
+ALLOWED_HOSTS = ["demo.scanapi.dev", "demo-api.fly.dev"]
