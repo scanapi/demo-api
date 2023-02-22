@@ -44,3 +44,9 @@ python manage.py runserver
 ```
 
 * If everything runs smoothly without any errors you should see the API live at http://127.0.0.1:8000/. Feel free to create an issue if run into problems while setting up the project.
+
+## Deployment
+
+ Currently the demo-api is hosted on Fly.io. Whenever any branch is merged into the main branch a new deployment is triggered at [demo.scanapi.dev](https://demo.scanapi.dev/api/v1/) via GitHub Actions
+
+ You can check the status/activity log of the current deployment as well as the past ones [here](https://github.com/scanapi/demo-api/actions/).
