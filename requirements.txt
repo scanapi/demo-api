@@ -1,11 +1,11 @@
 dj-database-url==1.2.0
 django-allauth==0.54.0
 django-rest-auth==0.9.5
-Django==3.2.18
+Django==3.2.25
 djangorestframework==3.12.4
 gunicorn==20.0.4
 psycopg2-binary==2.9.5
-Pygments==2.9.0
+Pygments==2.15.0
 PyYAML==5.4.1
 setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
 uritemplate==3.0.1
