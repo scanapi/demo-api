@@ -10,3 +10,4 @@ PyYAML==5.4.1
 setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
 uritemplate==3.0.1
 whitenoise==6.3.0
+sqlparse>=0.5.0 # not directly required, pinned by Snyk to avoid a vulnerability
